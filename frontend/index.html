@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Trievo Records</title>
+<link rel="icon" href="assets/trievo-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#1b2333;--mint:#2fd68f;--teal:#7cc4b4;--pink:#e98a9b;--plum:#8a6fa8;--mute:#5d6875;--glass:rgba(255,255,255,.5);--line:rgba(255,255,255,.8)}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--navy);min-height:100vh;padding:20px;font-size:14px;
+background:radial-gradient(900px 520px at 10% 100%,#b5dccd,transparent 60%),radial-gradient(700px 500px at 95% 0,#cfe6b8,transparent 55%),radial-gradient(600px 420px at 55% 55%,#c7e0ea,transparent 60%),#e6ece6;background-attachment:fixed}
+.app{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:230px 1fr;gap:16px;min-height:calc(100vh - 40px)}
+.g{background:var(--glass);backdrop-filter:blur(22px) saturate(1.25);-webkit-backdrop-filter:blur(22px) saturate(1.25);border:1px solid var(--line);border-radius:28px;box-shadow:0 18px 50px rgba(60,90,80,.10)}
+nav{padding:20px 14px;display:flex;flex-direction:column;gap:4px;position:sticky;top:20px;align-self:start;height:calc(100vh - 40px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;padding:4px 10px 18px}.logo i{width:22px;height:22px;border-radius:50%;background:conic-gradient(var(--mint),var(--teal),var(--plum),var(--pink),var(--mint))}
+nav button{display:flex;align-items:center;gap:12px;border:0;background:transparent;padding:12px 14px;border-radius:18px;font:inherit;font-weight:500;color:var(--navy);cursor:pointer;text-align:left}
+nav button svg{width:18px;height:18px;flex:none}
+nav button:hover{background:rgba(255,255,255,.55)}nav button.on{background:var(--navy);color:#fff}
+.bridge{margin-top:auto;padding:12px 14px;border-radius:18px;background:rgba(255,255,255,.55);font-size:12px;color:var(--mute)}.bridge b{display:flex;align-items:center;gap:6px;color:var(--navy);font-size:13px;margin-bottom:2px}.bridge i{width:8px;height:8px;border-radius:50%;background:var(--mint)}.bridge.off i{background:var(--pink)}
+.main{display:grid;grid-template-columns:270px 1fr;gap:16px;align-items:start}
+.plist{padding:16px;position:sticky;top:20px}
+.plist input,.f input,.f select,.f textarea{font:inherit;color:var(--navy);border:1px solid transparent;border-radius:14px;padding:10px 13px;background:rgba(255,255,255,.75);width:100%;min-width:0}
+.pt{width:100%;border:0;background:transparent;display:flex;gap:10px;align-items:center;padding:9px;border-radius:16px;font:inherit;text-align:left;cursor:pointer;color:var(--navy);margin-top:4px}
+.pt:hover{background:rgba(255,255,255,.55)}.pt.on{background:var(--navy);color:#fff}.pt small{display:block;opacity:.65;font-size:12px}
+.av{width:36px;height:36px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:600;font-size:13px;color:#fff;background:linear-gradient(135deg,var(--pink),var(--plum))}
+.work{display:flex;flex-direction:column;gap:16px;min-width:0}
+.pbar{padding:18px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pbar .av{width:52px;height:52px;font-size:18px}.pbar h1{font-size:22px;margin:0;font-weight:600}.pbar p{margin:2px 0 0;color:var(--mute)}
+.chips{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.chip{padding:7px 12px;border-radius:14px;background:rgba(255,255,255,.65);font-size:12.5px;color:var(--mute)}.chip b{color:var(--navy);font-size:14px;margin-right:4px}
+.view{display:none}.view.on{display:grid;gap:16px}
+.two{grid-template-columns:1.1fr .9fr}
+.card{padding:20px 22px}.card h2{margin:0 0 4px;font-size:16px;font-weight:600}.sub{color:var(--mute);margin:0 0 14px;font-size:13px}
+.btn{border:0;border-radius:14px;padding:10px 18px;font:inherit;font-weight:600;background:var(--mint);color:var(--navy);cursor:pointer}.btn.dark{background:var(--navy);color:#fff}.btn.ghost{background:rgba(255,255,255,.7)}
+:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+.f{display:flex;flex-direction:column;gap:8px}.r{display:flex;gap:8px}.r>*{flex:1}
+label.l{font-size:12.5px;color:var(--mute);margin-top:4px}
+/* timeline */
+.tl{position:relative;padding-left:22px}.tl:before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:rgba(27,35,51,.12)}
+.ev{position:relative;padding:0 0 16px}.ev:before{content:"";position:absolute;left:-21px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--c,var(--mint));border:2px solid #eef4f0}
+.ev b{display:block}.ev small{color:var(--mute)}.ev p{margin:2px 0}
+/* pad preview */
+.paper{background:rgba(255,255,255,.85);border-radius:20px;padding:22px;min-height:280px}
+.paper h3{margin:0;font-size:15px}.paper table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}.paper th{text-align:left;color:var(--mute);font-weight:500;padding:6px 4px;border-bottom:1px solid #dfe7e3}.paper td{padding:8px 4px;border-bottom:1px solid #eef2f0}
+.drug{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:6px;margin-bottom:6px}
+.rxi{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid rgba(27,35,51,.08)}.rxi a{color:var(--plum);font-weight:600;text-decoration:none}
+/* dental */
+.arch{display:grid;grid-template-columns:repeat(16,1fr);gap:6px}
+.tooth{aspect-ratio:.7;border-radius:16px 16px 24px 24px;border:2px solid rgba(255,255,255,.95);background:#fff;font:600 11px "Plus Jakarta Sans";color:var(--navy);cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;transition:transform .12s}
+.tooth:hover{transform:translateY(-3px)}.tooth.sel{outline:3px solid var(--navy);outline-offset:1px}
+.s-caries{background:#f4b3bd}.s-filled{background:#b7c8e8}.s-missing{background:transparent;border:2px dashed #9aa8a3;color:#8b9994}.s-crowned{background:#f0d8a0}.s-root_canal{background:#d3c1e6}.s-implant{background:#a8dccf}.s-extraction_planned{background:#f6c9a5}
+.mid{display:flex;justify-content:space-between;color:var(--mute);font-size:12px;margin:8px 2px}
+.stc{display:flex;flex-wrap:wrap;gap:6px}.stc button{border:2px solid transparent;border-radius:14px;padding:7px 12px;font:inherit;font-size:12.5px;cursor:pointer;color:var(--navy);background:#fff}.stc button.on{border-color:var(--navy)}
+/* derm */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ba figure{margin:0;border-radius:20px;overflow:hidden;background:rgba(255,255,255,.6)}.ba img,.strip img{width:100%;display:block;object-fit:cover}.ba img{height:230px}.ba figcaption,.strip figcaption{padding:8px 12px;color:var(--mute);font-size:12.5px}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:12px}.strip figure{margin:0;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.6)}.strip img{height:80px}
+.noimg{display:grid;place-items:center;text-align:center;color:var(--mute);font-size:12px;background:linear-gradient(135deg,rgba(124,196,180,.25),rgba(138,111,168,.2))}.ba .noimg{height:230px}.strip .noimg{height:80px}.ph{height:230px;display:grid;place-items:center;color:var(--mute);background:rgba(255,255,255,.5)}
+.empty{color:var(--mute);padding:8px 0}
+table.t{width:100%;border-collapse:collapse}.t td,.t th{padding:10px 8px;text-align:left;border-top:1px solid rgba(27,35,51,.08)}.t th{color:var(--mute);font-weight:500;border-top:0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 20px;border-radius:18px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}.toast.show{opacity:1}.toast.err{background:#a93c52}
+@media(max-width:1000px){.app,.main,.two{grid-template-columns:1fr}nav{position:static;height:auto;flex-direction:row;overflow-x:auto;padding:10px}nav .logo,.bridge{display:none}nav button{white-space:nowrap}.plist{position:static}.arch{grid-template-columns:repeat(8,1fr)}.ba{grid-template-columns:1fr}.chips{margin-left:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body><div class="app">
+<nav class="g" aria-label="Sections">
+ <div class="logo"><img src="assets/trievo-mark.svg" alt="" width="30" height="30">Trievo Records</div>
+ <button data-v="chart" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Clinical chart</button>
+ <button data-v="rx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 9h6M9 13h6"/></svg>Prescriptions</button>
+ <button data-v="dental"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4c-3 0-4 3-3 6s1 10 3 10 1-6 5-6 3 6 5 6 2-7 3-10-1-6-3-6-3 2-5 2-2-2-5-2z"/></svg>Dental chart</button>
+ <button data-v="derm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3.5"/></svg>Skin photos</button>
+ <button data-v="events"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>Event log</button>
+ <div class="bridge" id="bridge"><b><i></i><span id="bs">Connecting</span></b><span id="bt">Integration bridge</span></div>
+</nav>
+<div class="main">
+ <aside class="g plist"><div class="f"><h2 style="margin:0">Patients</h2><input id="q" placeholder="Search by name" aria-label="Search patients"></div><div id="pts"></div>
+  <p class="sub" style="margin-top:14px">Identity is shared through Vault. Charts here are separate from triage cases.</p></aside>
+ <div class="work">
+  <header class="g pbar" id="pbar"></header>
+  <section class="view two on" id="v-chart">
+   <div class="g card"><h2>Visit history</h2><p class="sub">Notes, prescriptions, dental changes and photos in date order.</p><div class="tl" id="tl"></div></div>
+   <div class="g card"><h2>Add clinical note</h2><p class="sub">Saved to this patient's general chart.</p><div class="f"><input id="clin" value="Dr. Shilpa Rao" aria-label="Clinician"><textarea id="note" rows="6" placeholder="Visit findings, plan, follow-up"></textarea><button class="btn" id="addnote">Save note</button></div></div>
+  </section>
+  <section class="view two" id="v-rx">
+   <div class="g card"><h2>New prescription</h2><p class="sub">Every drug needs a dosage, frequency and duration.</p><div id="drugs"></div>
+    <div class="r" style="margin-top:6px"><button class="btn ghost" id="add">Add drug</button><button class="btn" id="issue">Issue prescription</button></div>
+    <h2 style="margin-top:22px">Issued</h2><div id="rxl"></div></div>
+   <div class="g card"><h2>Printable pad</h2><p class="sub">Preview of what the patient receives on print or WhatsApp.</p><div class="paper" id="paper"></div></div>
+  </section>
+  <section class="view two" id="v-dental">
+   <div class="g card" style="grid-column:1/-1"><h2>Odontogram</h2><p class="sub">Adult chart, universal numbering 1 to 32. Select a tooth to update it.</p>
+    <div class="mid"><span>Upper right</span><span>Upper left</span></div><div class="arch" id="up"></div><div class="arch" id="lo" style="margin-top:8px"></div><div class="mid"><span>Lower right</span><span>Lower left</span></div></div>
+   <div class="g card"><h2 id="th">Select a tooth</h2><p class="sub" id="ts">Choose a tooth above to set its status.</p><div class="stc" id="stc"></div><div class="f" style="margin-top:12px"><input id="tn" placeholder="Note (optional)"><button class="btn" id="save">Save tooth status</button></div></div>
+   <div class="g card"><h2>Tooth history</h2><p class="sub">Changes recorded for the selected tooth.</p><div id="thist" class="empty">No tooth selected.</div></div>
+  </section>
+  <section class="view" id="v-derm">
+   <div class="g card"><h2>Add photo</h2><p class="sub">Tag each photo to a condition or procedure. Blurry or small images are rejected.</p>
+    <div class="r"><div class="f"><label class="l" for="cond">Condition or procedure</label><input id="cond" list="cl" value="Acne treatment"><datalist id="cl"></datalist></div><div class="f"><label class="l" for="lab">Label</label><input id="lab" value="Before"></div><div class="f"><label class="l" for="file">Photo</label><input type="file" id="file" accept="image/*"></div><div class="f" style="justify-content:flex-end"><button class="btn" id="up-btn">Add to timeline</button></div></div></div>
+   <div id="dermc"></div>
+  </section>
+  <section class="view" id="v-events"><div class="g card"><h2>Events published</h2><p class="sub">Consumed by CRM for WhatsApp delivery and by Dashboard for the unified patient view.</p><div id="evl"></div></div></section>
+ </div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="config.js"></script>
+<script>
+const $=s=>document.querySelector(s),BASE=(window.TRIEVO_API_BASE||'').replace(/\/$/,''),API=BASE+'/api/v1/records';
+const ST={healthy:'Healthy',caries:'Caries',filled:'Filled',missing:'Missing',crowned:'Crowned',root_canal:'Root canal',implant:'Implant',extraction_planned:'Extraction planned'};
+let pts=[],cur=null,C=null,tooth=null,sst='healthy',off=false;const L={},LOG=[];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SEED={"patients":[{"id":"P-1001","name":"Ayesha Khan","age":34,"sex":"F","phone":"+92 301 1111111","specialty":"Dental"},{"id":"P-1002","name":"Bilal Ahmed","age":27,"sex":"M","phone":"+92 302 1222222","specialty":"Dermatology"},{"id":"P-1003","name":"Sana Malik","age":52,"sex":"F","phone":"+92 303 1333333","specialty":"General OPD"},{"id":"P-1004","name":"Usman Raza","age":41,"sex":"M","phone":"+92 304 1444444","specialty":"Dental"},{"id":"P-1005","name":"Hira Siddiqui","age":29,"sex":"F","phone":"+92 305 1555555","specialty":"Dermatology"},{"id":"P-1006","name":"Imran Sheikh","age":63,"sex":"M","phone":"+92 306 1666666","specialty":"General OPD"},{"id":"P-1007","name":"Farhan Ali","age":36,"sex":"M","phone":"+92 307 1777777","specialty":"Dermatology"},{"id":"P-1008","name":"Maryam Baloch","age":45,"sex":"F","phone":"+92 308 1888888","specialty":"Dental"}],"records":{"P-1001":{"notes":[["2026-09-10 09:30","Pain on upper left molar for 4 days. Bitewing advised, caries suspected on 14.","Dr. Shilpa Rao"],["2026-09-24 11:00","Composite filling placed on 19. Advised soft diet today. Review in 6 months.","Dr. Shilpa Rao"]],"teeth":[[14,"caries","Deep cavity, restoration planned","2026-09-10"],[19,"filled","Composite filling","2026-09-24"],[30,"crowned","Porcelain crown","2026-07-15"],[1,"missing","Extracted earlier","2026-03-02"],[18,"root_canal","RCT completed","2026-08-12"],[32,"extraction_planned","Impacted, refer to surgeon","2026-09-10"]],"rx":[["2026-09-10","Shilpa Rao",[["Amoxicillin","500mg","TDS","5 days"],["Ibuprofen","400mg","BD","3 days"]]],["2026-09-24","Shilpa Rao",[["Paracetamol","500mg","TDS","2 days"],["Chlorhexidine mouthwash 0.2%","10 ml","BD","7 days"]]]]},"P-1002":{"notes":[["2026-08-05 10:00","Moderate inflammatory acne on cheeks and forehead. Started topical retinoid and oral antibiotic.","Dr. Shilpa Rao"],["2026-09-30 10:15","Good response at week 8. Continue retinoid, stop antibiotic.","Dr. Shilpa Rao"]],"derm":{"Acne treatment":[["Before","2026-08-05"],["Week 4","2026-09-02"],["Week 8","2026-09-30"]],"Chemical peel":[["Before","2026-09-12"],["After 2 weeks","2026-09-26"]]},"rx":[["2026-08-05","Shilpa Rao",[["Adapalene gel 0.1%","Pea-sized","Nightly","8 weeks"],["Doxycycline","100mg","OD","6 weeks"]]],["2026-09-12","Shilpa Rao",[["Azelaic acid 15% gel","Thin layer","BD","6 weeks"],["Sunscreen SPF 50","Face","Morning","Ongoing"]]]],"teeth":[[18,"missing","Wisdom tooth removed","2025-12-04"],[19,"filled","Composite","2026-02-14"],[8,"filled","Incisal chip repair","2026-05-09"],[30,"crowned","Zirconia crown","2026-06-21"]]},"P-1003":{"notes":[["2026-08-14 12:10","Routine review. BP 128/82, fasting sugar 142 mg/dL. Continue current medication.","Dr. Kamran Yusuf"],["2026-09-22 10:20","Seasonal fever for 3 days. Advised rest and fluids, review if it persists beyond 5 days.","Dr. Kamran Yusuf"],["2026-09-29 09:40","Fever settled. Cough improving, no antibiotics needed.","Dr. Kamran Yusuf"]],"rx":[["2026-08-14","Kamran Yusuf",[["Metformin","500mg","BD","30 days"],["Amlodipine","5mg","OD","30 days"]]],["2026-09-22","Kamran Yusuf",[["Paracetamol","500mg","TDS","3 days"],["Cetirizine","10mg","Night","5 days"]]]],"teeth":[[3,"crowned","Metal ceramic","2024-10-12"],[14,"filled","Amalgam","2025-03-18"],[15,"caries","Distal caries, advised filling","2026-08-14"],[16,"missing","Extracted","2023-07-02"],[30,"root_canal","RCT done","2026-01-25"],[31,"extraction_planned","Non-restorable","2026-08-14"]]},"P-1004":{"notes":[["2026-09-18 15:00","Sensitivity to cold on lower right. Scaling and polishing done, 30 and 31 restored.","Dr. Shilpa Rao"]],"teeth":[[30,"filled","Amalgam, old","2026-09-18"],[31,"filled","Composite, new","2026-09-18"],[3,"crowned","Metal ceramic","2026-05-20"],[16,"missing","","2026-01-10"],[17,"implant","Implant placed, healing","2026-06-30"],[8,"caries","Mesial caries, monitor","2026-09-18"],[25,"healthy","Post whitening check","2026-09-18"]],"rx":[["2026-05-20","Shilpa Rao",[["Amoxicillin","500mg","TDS","5 days"],["Diclofenac","50mg","BD","3 days"]]],["2026-09-18","Shilpa Rao",[["Desensitizing toothpaste","Twice daily","Brush","4 weeks"]]]]},"P-1005":{"notes":[["2026-07-20 11:30","Facial melasma, mixed type. Sunscreen and topical depigmenting regimen started.","Dr. Shilpa Rao"],["2026-09-15 11:45","Eczema flare on both forearms after detergent change. Mild steroid started.","Dr. Shilpa Rao"]],"derm":{"Melasma treatment":[["Before","2026-07-20"],["Week 6","2026-08-31"],["Week 10","2026-09-28"]],"Eczema flare":[["Day 1","2026-09-15"],["Day 10","2026-09-25"]]},"rx":[["2026-07-20","Shilpa Rao",[["Hydroquinone 2% cream","Thin layer","Night","8 weeks"],["Sunscreen SPF 50","Face","Morning","Ongoing"],["Tranexamic acid","250mg","BD","8 weeks"]]],["2026-09-15","Shilpa Rao",[["Hydrocortisone 1% cream","Thin layer","BD","7 days"],["Emollient lotion","Generous","After bath","Ongoing"]]]],"teeth":[[7,"filled","Composite","2026-03-02"],[9,"filled","Composite","2026-03-02"],[19,"caries","Occlusal, monitor","2026-07-20"],[32,"missing","Wisdom tooth removed","2025-09-15"]]},"P-1006":{"notes":[["2026-08-30 09:15","Knee pain on climbing stairs, mild effusion. Physiotherapy advised.","Dr. Kamran Yusuf"],["2026-09-13 09:50","Pain reduced. Continue exercises, avoid long walks.","Dr. Kamran Yusuf"],["2026-09-27 10:05","BP 140/90, repeat in one week. Salt reduction advised.","Dr. Kamran Yusuf"]],"rx":[["2026-08-30","Kamran Yusuf",[["Naproxen","500mg","BD","7 days"],["Omeprazole","20mg","OD","7 days"]]],["2026-09-27","Kamran Yusuf",[["Amlodipine","5mg","OD","14 days"]]]],"teeth":[[1,"missing","","2019-05-01"],[2,"missing","","2019-05-01"],[3,"crowned","Gold crown","2021-08-30"],[14,"root_canal","RCT done","2024-02-11"],[15,"crowned","Crown on RCT tooth","2024-03-05"],[19,"implant","Implant with crown","2025-01-17"],[30,"filled","Amalgam, old","2022-11-10"],[31,"caries","Recurrent decay","2026-08-30"]]},"P-1007":{"notes":[["2026-09-08 16:20","Single plantar wart on right foot. Cryotherapy session 1 done.","Dr. Shilpa Rao"]],"derm":{"Wart removal":[["Before","2026-09-08"],["After session 2","2026-09-22"]]},"rx":[["2026-09-08","Shilpa Rao",[["Salicylic acid 17% paint","Thin layer","Nightly","4 weeks"],["Duct tape occlusion","Cover wart","Daily","4 weeks"]]]],"teeth":[[8,"filled","Composite","2026-01-12"],[13,"caries","Cervical lesion","2026-09-08"],[18,"missing","Extracted","2024-06-06"],[29,"filled","Composite","2025-10-21"]]},"P-1008":{"notes":[["2026-09-05 14:00","Gum bleeding on brushing. Generalized gingivitis, scaling done.","Dr. Shilpa Rao"],["2026-09-26 14:30","Gums improved. Crown prepared on 19, temporary placed.","Dr. Shilpa Rao"]],"teeth":[[19,"crowned","Temporary crown, final pending","2026-09-26"],[12,"filled","Composite","2026-04-11"],[14,"filled","Composite","2026-04-11"],[28,"root_canal","RCT in progress","2026-09-05"],[2,"missing","","2025-11-03"],[15,"caries","Occlusal, watch","2026-09-05"]],"rx":[["2026-09-05","Shilpa Rao",[["Chlorhexidine mouthwash 0.2%","10 ml","BD","10 days"]]],["2026-09-26","Shilpa Rao",[["Ibuprofen","400mg","TDS","3 days"],["Benzydamine rinse","15 ml","TDS","5 days"]]]]}}};
+const day=d=>d+'T10:00:00';
+function seed(id){const p=pts.find(x=>x.id===id),r=SEED.records[id]||{},d={patient:p,notes:[],prescriptions:[],odontogram:null,dermatology:{}};
+ d.notes=(r.notes||[]).map(([at,text,clinician])=>({at,text,clinician}));
+ d.prescriptions=(r.rx||[]).map(([dt,clin,its],k)=>({id:'RX-'+id.slice(2)+'0'+(k+1),issued_at:day(dt),clinician:clin,items:its.map(([drug,dosage,frequency,duration])=>({drug,dosage,frequency,duration}))}));
+ if(r.teeth){const o={};for(let n=1;n<=32;n++)o[n]={status:'healthy',history:[]};r.teeth.forEach(([n,s,note,dt])=>{o[n].history.push({from:o[n].status,to:s,note,at:day(dt)});o[n].status=s});d.odontogram=o}
+ Object.entries(r.derm||{}).forEach(([c,a])=>{d.dermatology[c]=a.map(([label,dt])=>({url:null,label,taken_at:day(dt),condition:c}))});
+ return d}
+const im=(x,alt)=>x.url?`<img src="${x.url[0]==='/'?BASE+x.url:x.url}" alt="${esc(alt)}">`:`<div class="noimg">No image attached</div>`;
+function toast(m,e){const t=$('#toast');t.textContent=m;t.className='toast show'+(e?' err':'');clearTimeout(toast.t);toast.t=setTimeout(()=>t.className='toast',3400)}
+async function api(p,o){const r=await fetch(API+p,o);if(!r.ok){let m='Request failed';try{const j=await r.json();m=typeof j.detail==='string'?j.detail:j.detail.map(d=>d.msg).join('; ')}catch(e){}throw new Error(m)}return r.json()}
+function logEv(event,pid){if(off)LOG.push({event,patient_id:pid,at:new Date().toISOString()})}
+async function init(){
+ try{pts=await api('/patients');$('#bs').textContent='Bridge connected'}catch(e){off=true;pts=SEED.patients;$('#bridge').classList.add('off');$('#bs').textContent='Preview mode';$('#bt').textContent='No backend. Data stays in this tab.'}
+ drugRow();lst();pick(pts[0].id)}
+function lst(){const q=$('#q').value.toLowerCase();$('#pts').innerHTML=pts.filter(p=>p.name.toLowerCase().includes(q)).map(p=>`<button class="pt ${p.id===cur?'on':''}" data-id="${p.id}"><span class="av">${esc(p.name.split(' ').map(w=>w[0]).join(''))}</span><span>${esc(p.name)}<small>${esc(p.specialty||'')} · ${p.id}</small></span></button>`).join('')||'<div class="empty">No patient matches that name.</div>'}
+async function pick(id){cur=id;tooth=null;lst();if(off)C=L[id]=L[id]||seed(id);else C=await api(`/patients/${id}/chart`);draw()}
+function draw(){const p=C.patient,od=C.odontogram||{},flag=Object.values(od).filter(t=>t.status!=='healthy').length,ph=Object.values(C.dermatology||{}).flat().length;
+ $('#pbar').innerHTML=`<span class="av">${esc(p.name.split(' ').map(w=>w[0]).join(''))}</span><div><h1>${esc(p.name)}</h1><p>${p.age||''} yrs · ${p.sex||''} · ${p.id} · ${esc(p.specialty||'')}</p></div><div class="chips"><span class="chip"><b>${C.prescriptions.length}</b>prescriptions</span><span class="chip"><b>${flag}</b>teeth flagged</span><span class="chip"><b>${ph}</b>photos</span></div>`;
+ // timeline
+ const it=[];C.notes.forEach(n=>it.push({at:n.at,c:'var(--teal)',t:'Clinical note',d:n.text,s:n.clinician}));
+ C.prescriptions.forEach(r=>it.push({at:r.issued_at,c:'var(--mint)',t:'Prescription '+r.id,d:r.items.map(i=>`${i.drug} ${i.dosage}, ${i.frequency}, ${i.duration}`).join('; '),s:'Dr. '+r.clinician.replace(/^Dr\.\s*/,'')}));
+ Object.entries(od).forEach(([n,t])=>(t.history||[]).forEach(h=>it.push({at:h.at,c:'var(--plum)',t:`Tooth ${n}: ${ST[h.to]}`,d:h.note||`Changed from ${ST[h.from]}`,s:''})));
+ Object.entries(C.dermatology||{}).forEach(([c,a])=>a.forEach(x=>it.push({at:x.taken_at,c:'var(--pink)',t:`Photo: ${c}`,d:x.label,s:''})));
+ it.sort((a,b)=>String(b.at).localeCompare(String(a.at)));
+ $('#tl').innerHTML=it.length?it.map(e=>`<div class="ev" style="--c:${e.c}"><b>${esc(e.t)}</b><p>${esc(e.d)}</p><small>${String(e.at).slice(0,16).replace('T',' ')} ${esc(e.s||'')}</small></div>`).join(''):'<div class="empty">No entries yet. Save a note, issue a prescription or chart a tooth to start this chart.</div>';
+ // rx
+ $('#rxl').innerHTML=C.prescriptions.length?C.prescriptions.slice().reverse().map(r=>`<div class="rxi"><div><b>${r.id}</b><br><small>${r.items.map(i=>esc(i.drug)).join(', ')} · ${r.issued_at.slice(0,10)}</small></div>${off?'':`<a href="${API}/prescription/${r.id}/print" target="_blank">Print pad</a>`}</div>`).join(''):'<div class="empty">No prescriptions issued yet.</div>';
+ pad();
+ // teeth
+ const tb=n=>{const s=(od[n]&&od[n].status)||'healthy';return `<button class="tooth s-${s} ${tooth===n?'sel':''}" data-t="${n}" aria-label="Tooth ${n}, ${ST[s]}">${n}</button>`};
+ $('#up').innerHTML=Array.from({length:16},(_,i)=>tb(i+1)).join('');$('#lo').innerHTML=Array.from({length:16},(_,i)=>tb(32-i)).join('');
+ tpanel();
+ // derm
+ const g=C.dermatology||{};$('#cl').innerHTML=Object.keys(g).map(c=>`<option value="${esc(c)}">`).join('');
+ $('#dermc').innerHTML=Object.keys(g).length?Object.entries(g).map(([c,a])=>{const f=a[0],l=a[a.length-1];return `<div class="g card"><h2>${esc(c)}</h2><p class="sub">${a.length} photo${a.length>1?'s':''} · oldest to newest</p><div class="ba"><figure>${im(f,f.label)}<figcaption>${esc(f.label)} · ${f.taken_at.slice(0,10)}</figcaption></figure>${a.length>1?`<figure>${im(l,l.label)}<figcaption>${esc(l.label)} · ${l.taken_at.slice(0,10)}</figcaption></figure>`:'<figure><div class="ph">Add a follow-up photo to compare</div></figure>'}</div><div class="strip">${a.map(x=>`<figure>${im(x,'')}<figcaption>${esc(x.label)} · ${x.taken_at.slice(5,10)}</figcaption></figure>`).join('')}</div></div>`}).join(''):'<div class="g card"><div class="empty">No photos yet. Tag a condition above and add the first photo.</div></div>';
+ evs()}
+function pad(){let items=[...document.querySelectorAll('.drug')].map(r=>[...r.children].map(i=>i.value.trim())),lbl='';if(!items.some(r=>r[0])&&C.prescriptions.length){const q=C.prescriptions[C.prescriptions.length-1];items=q.items.map(i=>[i.drug,i.dosage,i.frequency,i.duration]);lbl=' · '+q.id+' (latest issued)'}
+ $('#paper').innerHTML=`<h3>Trievo Records</h3><small>${esc(C.patient.name)} · ${new Date().toISOString().slice(0,10)}${lbl}</small><table><tr><th>Drug</th><th>Dosage</th><th>Frequency</th><th>Duration</th></tr>${items.filter(r=>r[0]).map(r=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')||'<tr><td colspan=4 class="empty">Drugs you add appear here.</td></tr>'}</table><p style="margin-top:36px">${esc($('#clin').value||'')}</p>`}
+function tpanel(){const od=C.odontogram||{};$('#stc').innerHTML=Object.entries(ST).map(([k,v])=>`<button data-s="${k}" class="${sst===k?'on':''}"><span class="tooth s-${k}" style="display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:6px;padding:0;aspect-ratio:auto"></span>${v}</button>`).join('');
+ if(!tooth){$('#th').textContent='Select a tooth';return}
+ const t=od[tooth]||{status:'healthy',history:[]};$('#th').textContent='Tooth '+tooth;$('#ts').textContent='Current status: '+ST[t.status];
+ $('#thist').innerHTML=t.history.length?t.history.slice().reverse().map(h=>`<div class="rxi"><span>${ST[h.from]} to <b>${ST[h.to]}</b>${h.note?'<br><small>'+esc(h.note)+'</small>':''}</span><small>${h.at.slice(0,10)}</small></div>`).join(''):'<div class="empty">No changes recorded for this tooth.</div>'}
+function evs(){const run=r=>$('#evl').innerHTML=r.length?`<table class="t"><tr><th>Event</th><th>Patient</th><th>Time</th></tr>${r.slice().reverse().map(e=>`<tr><td>${e.event}</td><td>${e.patient_id}</td><td>${e.at.slice(11,19)}</td></tr>`).join('')}</table>`:'<div class="empty">Nothing published yet. Actions in this session will appear here.</div>';
+ off?run(LOG):api('/meta').then(m=>run(m.events)).catch(()=>{})}
+function drugRow(){const d=document.createElement('div');d.className='drug';d.innerHTML=['Drug name','Dosage','Frequency','Duration'].map(p=>`<input placeholder="${p}" aria-label="${p}">`).join('');d.oninput=pad;$('#drugs').appendChild(d)}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('nav [data-v]');if(b){document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+b.dataset.v));if(b.dataset.v==='events')evs();return}
+ const p=e.target.closest('.pt');if(p)return pick(p.dataset.id);
+ const t=e.target.closest('.tooth[data-t]');if(t){tooth=+t.dataset.t;sst=(C.odontogram&&C.odontogram[tooth]&&C.odontogram[tooth].status)||'healthy';return draw()}
+ const s=e.target.closest('[data-s]');if(s){sst=s.dataset.s;tpanel()}});
+$('#q').oninput=lst;$('#clin').oninput=pad;$('#add').onclick=drugRow;
+const post=(p,b)=>api(p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+$('#addnote').onclick=async()=>{const text=$('#note').value.trim();if(!text)return toast('Write the note before saving.',true);
+ try{if(off){C.notes.push({at:new Date().toISOString().slice(0,16).replace('T',' '),text,clinician:$('#clin').value});logEv('trievo.records.chart_updated',cur)}else await post('/notes',{patient_id:cur,text,clinician:$('#clin').value});
+ $('#note').value='';toast('Note saved.');off?draw():pick(cur)}catch(x){toast(x.message,true)}};
+$('#issue').onclick=async()=>{const items=[...document.querySelectorAll('.drug')].map(r=>{const[a,b,c,d]=[...r.children].map(i=>i.value.trim());return{drug:a,dosage:b,frequency:c,duration:d}}).filter(i=>i.drug);
+ if(!items.length)return toast('Add at least one drug with dosage, frequency and duration.',true);
+ if(items.some(i=>!i.dosage||!i.frequency||!i.duration))return toast('Complete dosage, frequency and duration for every drug.',true);
+ try{if(off){C.prescriptions.push({id:'RX-'+Math.random().toString(16).slice(2,10).toUpperCase(),issued_at:new Date().toISOString(),clinician:$('#clin').value,items});logEv('trievo.records.prescription_issued',cur)}else await post('/prescription',{patient_id:cur,clinician:$('#clin').value,items});
+ toast('Prescription issued.');$('#drugs').innerHTML='';drugRow();off?draw():pick(cur)}catch(x){toast(x.message,true)}};
+$('#save').onclick=async()=>{if(!tooth)return toast('Select a tooth first.',true);
+ try{if(off){const o=C.odontogram=C.odontogram||Object.fromEntries(Array.from({length:32},(_,i)=>[i+1,{status:'healthy',history:[]}]));const t=o[tooth];t.history.push({from:t.status,to:sst,note:$('#tn').value,at:new Date().toISOString()});t.status=sst;logEv('trievo.records.chart_updated',cur)}
+ else C.odontogram=await post('/odontogram/update',{patient_id:cur,tooth,status:sst,note:$('#tn').value});
+ $('#tn').value='';toast(`Tooth ${tooth} saved as ${ST[sst]}.`);draw()}catch(x){toast(x.message,true)}};
+$('#up-btn').onclick=async()=>{const f=$('#file').files[0],c=$('#cond').value.trim();if(!c)return toast('Tag the photo to a condition or procedure.',true);if(!f)return toast('Choose a photo to add.',true);
+ try{if(off){(C.dermatology[c]=C.dermatology[c]||[]).push({url:URL.createObjectURL(f),label:$('#lab').value,taken_at:new Date().toISOString(),condition:c});logEv('trievo.records.chart_updated',cur)}
+ else{const fd=new FormData();fd.append('patient_id',cur);fd.append('condition',c);fd.append('label',$('#lab').value);fd.append('file',f);await api('/dermatology/photo',{method:'POST',body:fd})}
+ $('#file').value='';toast('Photo added to '+c+'.');off?draw():pick(cur)}catch(x){toast(x.message,true)}};
+init();
+</script></body></html>

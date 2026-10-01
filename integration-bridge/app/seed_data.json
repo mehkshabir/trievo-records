@@ -1,0 +1,806 @@
+{
+"patients": [
+{
+"id": "P-1001",
+"name": "Ayesha Khan",
+"age": 34,
+"sex": "F",
+"phone": "+92 301 1111111",
+"specialty": "Dental"
+},
+{
+"id": "P-1002",
+"name": "Bilal Ahmed",
+"age": 27,
+"sex": "M",
+"phone": "+92 302 1222222",
+"specialty": "Dermatology"
+},
+{
+"id": "P-1003",
+"name": "Sana Malik",
+"age": 52,
+"sex": "F",
+"phone": "+92 303 1333333",
+"specialty": "General OPD"
+},
+{
+"id": "P-1004",
+"name": "Usman Raza",
+"age": 41,
+"sex": "M",
+"phone": "+92 304 1444444",
+"specialty": "Dental"
+},
+{
+"id": "P-1005",
+"name": "Hira Siddiqui",
+"age": 29,
+"sex": "F",
+"phone": "+92 305 1555555",
+"specialty": "Dermatology"
+},
+{
+"id": "P-1006",
+"name": "Imran Sheikh",
+"age": 63,
+"sex": "M",
+"phone": "+92 306 1666666",
+"specialty": "General OPD"
+},
+{
+"id": "P-1007",
+"name": "Farhan Ali",
+"age": 36,
+"sex": "M",
+"phone": "+92 307 1777777",
+"specialty": "Dermatology"
+},
+{
+"id": "P-1008",
+"name": "Maryam Baloch",
+"age": 45,
+"sex": "F",
+"phone": "+92 308 1888888",
+"specialty": "Dental"
+}
+],
+"records": {
+"P-1001": {
+"notes": [
+[
+"2026-09-10 09:30",
+"Pain on upper left molar for 4 days. Bitewing advised, caries suspected on 14.",
+"Dr. Shilpa Rao"
+],
+[
+"2026-09-24 11:00",
+"Composite filling placed on 19. Advised soft diet today. Review in 6 months.",
+"Dr. Shilpa Rao"
+]
+],
+"teeth": [
+[
+14,
+"caries",
+"Deep cavity, restoration planned",
+"2026-09-10"
+],
+[
+19,
+"filled",
+"Composite filling",
+"2026-09-24"
+],
+[
+30,
+"crowned",
+"Porcelain crown",
+"2026-07-15"
+],
+[
+1,
+"missing",
+"Extracted earlier",
+"2026-03-02"
+],
+[
+18,
+"root_canal",
+"RCT completed",
+"2026-08-12"
+],
+[
+32,
+"extraction_planned",
+"Impacted, refer to surgeon",
+"2026-09-10"
+]
+],
+"rx": [
+[
+"2026-09-10",
+"Shilpa Rao",
+[
+[
+"Amoxicillin",
+"500mg",
+"TDS",
+"5 days"
+],
+[
+"Ibuprofen",
+"400mg",
+"BD",
+"3 days"
+]
+]
+],
+[
+"2026-09-24",
+"Shilpa Rao",
+[
+[
+"Paracetamol",
+"500mg",
+"TDS",
+"2 days"
+],
+[
+"Chlorhexidine mouthwash 0.2%",
+"10 ml",
+"BD",
+"7 days"
+]
+]
+]
+]
+},
+"P-1002": {
+"notes": [
+[
+"2026-08-05 10:00",
+"Moderate inflammatory acne on cheeks and forehead. Started topical retinoid and oral antibiotic.",
+"Dr. Shilpa Rao"
+],
+[
+"2026-09-30 10:15",
+"Good response at week 8. Continue retinoid, stop antibiotic.",
+"Dr. Shilpa Rao"
+]
+],
+"derm": {
+"Acne treatment": [
+[
+"Before",
+"2026-08-05"
+],
+[
+"Week 4",
+"2026-09-02"
+],
+[
+"Week 8",
+"2026-09-30"
+]
+],
+"Chemical peel": [
+[
+"Before",
+"2026-09-12"
+],
+[
+"After 2 weeks",
+"2026-09-26"
+]
+]
+},
+"rx": [
+[
+"2026-08-05",
+"Shilpa Rao",
+[
+[
+"Adapalene gel 0.1%",
+"Pea-sized",
+"Nightly",
+"8 weeks"
+],
+[
+"Doxycycline",
+"100mg",
+"OD",
+"6 weeks"
+]
+]
+],
+[
+"2026-09-12",
+"Shilpa Rao",
+[
+[
+"Azelaic acid 15% gel",
+"Thin layer",
+"BD",
+"6 weeks"
+],
+[
+"Sunscreen SPF 50",
+"Face",
+"Morning",
+"Ongoing"
+]
+]
+]
+],
+"teeth": [
+[
+18,
+"missing",
+"Wisdom tooth removed",
+"2025-12-04"
+],
+[
+19,
+"filled",
+"Composite",
+"2026-02-14"
+],
+[
+8,
+"filled",
+"Incisal chip repair",
+"2026-05-09"
+],
+[
+30,
+"crowned",
+"Zirconia crown",
+"2026-06-21"
+]
+]
+},
+"P-1003": {
+"notes": [
+[
+"2026-08-14 12:10",
+"Routine review. BP 128/82, fasting sugar 142 mg/dL. Continue current medication.",
+"Dr. Kamran Yusuf"
+],
+[
+"2026-09-22 10:20",
+"Seasonal fever for 3 days. Advised rest and fluids, review if it persists beyond 5 days.",
+"Dr. Kamran Yusuf"
+],
+[
+"2026-09-29 09:40",
+"Fever settled. Cough improving, no antibiotics needed.",
+"Dr. Kamran Yusuf"
+]
+],
+"rx": [
+[
+"2026-08-14",
+"Kamran Yusuf",
+[
+[
+"Metformin",
+"500mg",
+"BD",
+"30 days"
+],
+[
+"Amlodipine",
+"5mg",
+"OD",
+"30 days"
+]
+]
+],
+[
+"2026-09-22",
+"Kamran Yusuf",
+[
+[
+"Paracetamol",
+"500mg",
+"TDS",
+"3 days"
+],
+[
+"Cetirizine",
+"10mg",
+"Night",
+"5 days"
+]
+]
+]
+],
+"teeth": [
+[
+3,
+"crowned",
+"Metal ceramic",
+"2024-10-12"
+],
+[
+14,
+"filled",
+"Amalgam",
+"2025-03-18"
+],
+[
+15,
+"caries",
+"Distal caries, advised filling",
+"2026-08-14"
+],
+[
+16,
+"missing",
+"Extracted",
+"2023-07-02"
+],
+[
+30,
+"root_canal",
+"RCT done",
+"2026-01-25"
+],
+[
+31,
+"extraction_planned",
+"Non-restorable",
+"2026-08-14"
+]
+]
+},
+"P-1004": {
+"notes": [
+[
+"2026-09-18 15:00",
+"Sensitivity to cold on lower right. Scaling and polishing done, 30 and 31 restored.",
+"Dr. Shilpa Rao"
+]
+],
+"teeth": [
+[
+30,
+"filled",
+"Amalgam, old",
+"2026-09-18"
+],
+[
+31,
+"filled",
+"Composite, new",
+"2026-09-18"
+],
+[
+3,
+"crowned",
+"Metal ceramic",
+"2026-05-20"
+],
+[
+16,
+"missing",
+"",
+"2026-01-10"
+],
+[
+17,
+"implant",
+"Implant placed, healing",
+"2026-06-30"
+],
+[
+8,
+"caries",
+"Mesial caries, monitor",
+"2026-09-18"
+],
+[
+25,
+"healthy",
+"Post whitening check",
+"2026-09-18"
+]
+],
+"rx": [
+[
+"2026-05-20",
+"Shilpa Rao",
+[
+[
+"Amoxicillin",
+"500mg",
+"TDS",
+"5 days"
+],
+[
+"Diclofenac",
+"50mg",
+"BD",
+"3 days"
+]
+]
+],
+[
+"2026-09-18",
+"Shilpa Rao",
+[
+[
+"Desensitizing toothpaste",
+"Twice daily",
+"Brush",
+"4 weeks"
+]
+]
+]
+]
+},
+"P-1005": {
+"notes": [
+[
+"2026-07-20 11:30",
+"Facial melasma, mixed type. Sunscreen and topical depigmenting regimen started.",
+"Dr. Shilpa Rao"
+],
+[
+"2026-09-15 11:45",
+"Eczema flare on both forearms after detergent change. Mild steroid started.",
+"Dr. Shilpa Rao"
+]
+],
+"derm": {
+"Melasma treatment": [
+[
+"Before",
+"2026-07-20"
+],
+[
+"Week 6",
+"2026-08-31"
+],
+[
+"Week 10",
+"2026-09-28"
+]
+],
+"Eczema flare": [
+[
+"Day 1",
+"2026-09-15"
+],
+[
+"Day 10",
+"2026-09-25"
+]
+]
+},
+"rx": [
+[
+"2026-07-20",
+"Shilpa Rao",
+[
+[
+"Hydroquinone 2% cream",
+"Thin layer",
+"Night",
+"8 weeks"
+],
+[
+"Sunscreen SPF 50",
+"Face",
+"Morning",
+"Ongoing"
+],
+[
+"Tranexamic acid",
+"250mg",
+"BD",
+"8 weeks"
+]
+]
+],
+[
+"2026-09-15",
+"Shilpa Rao",
+[
+[
+"Hydrocortisone 1% cream",
+"Thin layer",
+"BD",
+"7 days"
+],
+[
+"Emollient lotion",
+"Generous",
+"After bath",
+"Ongoing"
+]
+]
+]
+],
+"teeth": [
+[
+7,
+"filled",
+"Composite",
+"2026-03-02"
+],
+[
+9,
+"filled",
+"Composite",
+"2026-03-02"
+],
+[
+19,
+"caries",
+"Occlusal, monitor",
+"2026-07-20"
+],
+[
+32,
+"missing",
+"Wisdom tooth removed",
+"2025-09-15"
+]
+]
+},
+"P-1006": {
+"notes": [
+[
+"2026-08-30 09:15",
+"Knee pain on climbing stairs, mild effusion. Physiotherapy advised.",
+"Dr. Kamran Yusuf"
+],
+[
+"2026-09-13 09:50",
+"Pain reduced. Continue exercises, avoid long walks.",
+"Dr. Kamran Yusuf"
+],
+[
+"2026-09-27 10:05",
+"BP 140/90, repeat in one week. Salt reduction advised.",
+"Dr. Kamran Yusuf"
+]
+],
+"rx": [
+[
+"2026-08-30",
+"Kamran Yusuf",
+[
+[
+"Naproxen",
+"500mg",
+"BD",
+"7 days"
+],
+[
+"Omeprazole",
+"20mg",
+"OD",
+"7 days"
+]
+]
+],
+[
+"2026-09-27",
+"Kamran Yusuf",
+[
+[
+"Amlodipine",
+"5mg",
+"OD",
+"14 days"
+]
+]
+]
+],
+"teeth": [
+[
+1,
+"missing",
+"",
+"2019-05-01"
+],
+[
+2,
+"missing",
+"",
+"2019-05-01"
+],
+[
+3,
+"crowned",
+"Gold crown",
+"2021-08-30"
+],
+[
+14,
+"root_canal",
+"RCT done",
+"2024-02-11"
+],
+[
+15,
+"crowned",
+"Crown on RCT tooth",
+"2024-03-05"
+],
+[
+19,
+"implant",
+"Implant with crown",
+"2025-01-17"
+],
+[
+30,
+"filled",
+"Amalgam, old",
+"2022-11-10"
+],
+[
+31,
+"caries",
+"Recurrent decay",
+"2026-08-30"
+]
+]
+},
+"P-1007": {
+"notes": [
+[
+"2026-09-08 16:20",
+"Single plantar wart on right foot. Cryotherapy session 1 done.",
+"Dr. Shilpa Rao"
+]
+],
+"derm": {
+"Wart removal": [
+[
+"Before",
+"2026-09-08"
+],
+[
+"After session 2",
+"2026-09-22"
+]
+]
+},
+"rx": [
+[
+"2026-09-08",
+"Shilpa Rao",
+[
+[
+"Salicylic acid 17% paint",
+"Thin layer",
+"Nightly",
+"4 weeks"
+],
+[
+"Duct tape occlusion",
+"Cover wart",
+"Daily",
+"4 weeks"
+]
+]
+]
+],
+"teeth": [
+[
+8,
+"filled",
+"Composite",
+"2026-01-12"
+],
+[
+13,
+"caries",
+"Cervical lesion",
+"2026-09-08"
+],
+[
+18,
+"missing",
+"Extracted",
+"2024-06-06"
+],
+[
+29,
+"filled",
+"Composite",
+"2025-10-21"
+]
+]
+},
+"P-1008": {
+"notes": [
+[
+"2026-09-05 14:00",
+"Gum bleeding on brushing. Generalized gingivitis, scaling done.",
+"Dr. Shilpa Rao"
+],
+[
+"2026-09-26 14:30",
+"Gums improved. Crown prepared on 19, temporary placed.",
+"Dr. Shilpa Rao"
+]
+],
+"teeth": [
+[
+19,
+"crowned",
+"Temporary crown, final pending",
+"2026-09-26"
+],
+[
+12,
+"filled",
+"Composite",
+"2026-04-11"
+],
+[
+14,
+"filled",
+"Composite",
+"2026-04-11"
+],
+[
+28,
+"root_canal",
+"RCT in progress",
+"2026-09-05"
+],
+[
+2,
+"missing",
+"",
+"2025-11-03"
+],
+[
+15,
+"caries",
+"Occlusal, watch",
+"2026-09-05"
+]
+],
+"rx": [
+[
+"2026-09-05",
+"Shilpa Rao",
+[
+[
+"Chlorhexidine mouthwash 0.2%",
+"10 ml",
+"BD",
+"10 days"
+]
+]
+],
+[
+"2026-09-26",
+"Shilpa Rao",
+[
+[
+"Ibuprofen",
+"400mg",
+"TDS",
+"3 days"
+],
+[
+"Benzydamine rinse",
+"15 ml",
+"TDS",
+"5 days"
+]
+]
+]
+]
+}
+}
+}

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: trievo-records
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - { key: CORS_ORIGINS, value: "*" }
+      - { key: PHOTO_DIR, value: /data/photos }
+    disk: { name: photos, mountPath: /data/photos, sizeGB: 1 }
